@@ -1,0 +1,12 @@
+file_format: "1"
+id: dp1000
+name: dp1000
+type: shield
+url: https://github.com/howyi
+requires: [seeeduino_xiao_ble]
+features:
+  - keys
+  - encoder
+siblings:
+  - dp1000_left
+  - dp1000_right

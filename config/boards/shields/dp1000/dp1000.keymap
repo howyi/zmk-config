@@ -1,0 +1,52 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+#define LAYER_DEFAULT 0
+#define LAYER_MOD 1
+
+&mt {
+    tapping-term-ms = <300>;
+    flavor = "tap-preferred";
+};
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+/* Default
+ * ,-------------.        ,-------------.
+ * |   D  |   O  |        |   N  |   P  |
+ * |------+------|        |------+------|
+ * |   E  |   2  |        |   0  |     |
+ * `-------------'        `-------------'
+ */
+                        bindings = <
+    &kp D       &kp O       &kp N       &kp P
+    &kp E       &kp N2      &kp N0      &mo LAYER_MOD
+                >;
+        };
+
+
+        mod_layer {
+/* LAYER_MOD
+ * ,-------------.        ,----------------------.
+ * |   o  |   7  |        |   8  |   &sys_reset  |
+ * |------+------|        |------+---------------|
+ * |      |   4  |        |   5  |   6           |
+ * `-------------'        `----------------------'
+*/
+                        bindings = <
+    &kp N0        &kp N7       &kp N8     &sys_reset
+    &bt BT_CLR    &bt BT_PRV   &bt BT_NXT &trans
+                >;
+        };
+    };
+};
