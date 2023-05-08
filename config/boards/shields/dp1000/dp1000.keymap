@@ -17,6 +17,16 @@
 };
 
 / {
+    behaviors {
+        airpods: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp C_PLAY_PAUSE>, <&kp C_NEXT>, <&kp C_PREV>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -44,7 +54,7 @@
  * `-------------'        `----------------------'
 */
                         bindings = <
-    &kp N0        &kp N7       &kp N8     &sys_reset
+    &airpods      &kp N7       &kp N8     &sys_reset
     &bt BT_CLR    &bt BT_PRV   &bt BT_NXT &trans
                 >;
         };
