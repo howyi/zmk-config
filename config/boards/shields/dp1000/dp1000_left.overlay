@@ -1,7 +1,3 @@
 // dp1000_left.overlay
 
 #include "dp1000.dtsi" // Notice that the main dtsi files are included in the overlay.
-
-&left_encoder {
-    status = "okay";
-};
