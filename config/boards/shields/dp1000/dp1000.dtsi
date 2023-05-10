@@ -29,10 +29,14 @@ RC(1,0) RC(1,1)  RC(1,2) RC(1,3)
 		label = "KSCAN";
 
 		diode-direction = "col2row";
-			row-gpios
-        		= <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        		, <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        		;
+        row-gpios
+            = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+        col-gpios
+            = <&xiao_d 2 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 3 GPIO_ACTIVE_HIGH>
+            ;
 	};
 
 	left_encoder: encoder_left {
