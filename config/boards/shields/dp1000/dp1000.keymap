@@ -31,32 +31,17 @@
         compatible = "zmk,keymap";
 
         default_layer {
-/* Default
- * ,-------------.        ,-------------.
- * |   D  |   O  |        |   N  |   P  |
- * |------+------|        |------+------|
- * |   E  |   2  |        |   0  |      |
- * `-------------'        `-------------'
- */
-                        bindings = <
-    &kp D       &kp O       &kp N       &kp P
-    &kp E       &kp N2      &kp N0      &mo LAYER_MOD
-                >;
+            bindings = <
+                &kp D              &kp O       &kp N       &kp P
+                &mo LAYER_MOD      &kp N2      &kp N0      &mo LAYER_MOD
+            >;
         };
 
-
         mod_layer {
-/* LAYER_MOD
- * ,-----------------.        ,----------------------.
- * | &airpods |   7  |        |   8  |   &sys_reset  |
- * |----------+------|        |------+---------------|
- * |          |   4  |        |   5  |   6           |
- * `-----------------'        `----------------------'
-*/
-                        bindings = <
-    &airpods      &kp N7       &kp N8     &sys_reset
-    &bt BT_CLR    &bt BT_PRV   &bt BT_NXT &trans
-                >;
+            bindings = <
+                &airpods        &bootloader      &bootloader      &sys_reset
+                &bt BT_CLR      &bt BT_PRV       &bt BT_NXT       &trans
+            >;
         };
     };
 };
