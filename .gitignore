@@ -1,0 +1,7 @@
+/.env
+/.west/
+/artifacts/
+/build/
+/modules/
+/zephyr/
+/zmk/

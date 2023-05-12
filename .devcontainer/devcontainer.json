@@ -1,0 +1,21 @@
+{
+  "name": "${localWorkspaceFolderBasename}",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "workspace",
+  "remoteUser": "nonroot",
+  "workspaceFolder": "/code",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:1": {
+      "version": "latest",
+      "username": "nonroot"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "editorconfig.editorconfig"
+      ]
+    }
+  }
+}

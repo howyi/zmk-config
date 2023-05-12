@@ -1,0 +1,21 @@
+services:
+  workspace:
+    init: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USER_UID: ${HOST_UID:-1000}
+        USER_GID: ${HOST_GID:-1000}
+    volumes:
+      - .:/code
+      - build:/code/build
+      - modules:/code/modules
+      - zephyr:/code/zephyr
+      - zmk:/code/zmk
+
+volumes:
+  build:
+  modules:
+  zephyr:
+  zmk:
