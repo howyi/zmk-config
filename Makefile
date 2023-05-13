@@ -16,3 +16,14 @@ artifacts/%.uf2: artifacts
 
 artifacts:
 	mkdir -p artifacts
+
+.west:
+	west init -l $(CONFIG_DIR)
+
+.PHONY: update-deps
+update-deps:
+	west update
+	west zephyr-export
+
+.PHONY: init
+init: .west update-deps
