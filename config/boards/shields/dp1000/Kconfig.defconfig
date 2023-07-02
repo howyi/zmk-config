@@ -16,4 +16,7 @@ if SHIELD_dp1000_LEFT || SHIELD_dp1000_RIGHT
 config ZMK_SPLIT
 	default y
 
+config IL0323
+	default y
+
 endif
