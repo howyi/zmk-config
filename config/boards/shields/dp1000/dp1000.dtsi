@@ -8,7 +8,7 @@
 
 &xiao_spi {
     status = "okay";
-    cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
+    cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>, <&xiao_d 6 GPIO_ACTIVE_HIGH>;
     shift_reg: 595@0 {
         compatible = "zmk,gpio-595";
         status = "okay";
@@ -19,6 +19,21 @@
         #gpio-cells = <2>;
         ngpios = <8>;
     };
+	epd: il0323@0 {
+		compatible = "gooddisplay,il0323";
+		reg =  <1>;
+		label = "DISPLAY";
+		width = <80>;
+		height = <128>;
+		spi-max-frequency = <4000000>;
+		dc-gpios = <&xiao_d 5 GPIO_ACTIVE_LOW>;
+		busy-gpios = <&xiao_d 5 GPIO_ACTIVE_LOW>;
+		reset-gpios = <&xiao_d 5 GPIO_ACTIVE_LOW>;
+		pwr = [03 00 26 26];
+		//softstart = [17 17 17 17];
+		cdi = <0xd2>;
+		tcon = <0x22>;
+	};
 };
 
 &xiao_serial { status = "disabled"; };

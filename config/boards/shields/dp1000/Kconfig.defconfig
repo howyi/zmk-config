@@ -16,4 +16,28 @@ if SHIELD_dp1000_LEFT || SHIELD_dp1000_RIGHT
 config ZMK_SPLIT
 	default y
 
+config ZMK_DISPLAY
+    select LV_USE_CONT
+    select LV_FONT_MONTSERRAT_26
+    select LV_FONT_MONTSERRAT_16
+    select LV_USE_LABEL
+    select LV_USE_IMG
+
+choice ZMK_DISPLAY_STATUS_SCREEN
+    default ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+endchoice
+
+if ZMK_DISPLAY
+
+config SPI
+    default y
+
+config IL0323
+    default y
+
+config ZMK_DISPLAY_BLANK_ON_IDLE
+    default n
+
+endif # ZMK_DISPLAY
+
 endif
