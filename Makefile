@@ -25,5 +25,9 @@ update-deps:
 	west update
 	west zephyr-export
 
+.PHONY: build_host
+build_host:
+	docker compose run --rm --entrypoint '' workspace make
+
 .PHONY: init
 init: .west update-deps
