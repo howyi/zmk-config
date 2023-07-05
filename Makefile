@@ -27,7 +27,7 @@ update-deps:
 
 .PHONY: build_host
 build_host:
-	docker compose run --entrypoint '' workspace make
+	docker compose run --rm --entrypoint '' workspace make
 
 .PHONY: init
 init: .west update-deps
